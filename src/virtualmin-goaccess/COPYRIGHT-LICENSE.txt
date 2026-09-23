@@ -1,0 +1,13 @@
+GoAccess for Virtualmin v1.4
+
+Copyright (c) 2026 Frank Beckmann
+Company: FNH media KG
+Contact: beckmann@fnh.de
+Project: GoAccess for Virtualmin
+
+The license for this plugin has not yet been specified by the rights holder.
+This notice does not grant permission to redistribute or modify the plugin.
+
+GoAccess, Webmin and Virtualmin are independent projects. Their respective
+copyrights, trademarks and licenses remain with their owners. This plugin
+is not an official release of those projects.

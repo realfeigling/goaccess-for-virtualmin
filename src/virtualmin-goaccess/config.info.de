@@ -1,0 +1,3 @@
+url_path=URL-Pfad für Berichte,0
+update_minutes=Aktualisierungsintervall in Minuten (1-10080; 360 = 6 Stunden),0
+log_format=GoAccess-Logformat,4,COMBINED-COMBINED,COMMON-COMMON,VCOMBINED-VCOMBINED,CLOUDFRONT-CLOUDFRONT,CLOUDSTORAGE-CLOUDSTORAGE,AWSELB-AWSELB,SQUID-SQUID,W3C-W3C

@@ -1,0 +1,30 @@
+Virtualmin GoAccess v1.0 - Debian 9 / SysVinit / Cron
+
+Installation ueber Webmin > Webmin Configuration > Webmin Modules.
+postinstall.pl richtet /etc/cron.d/virtualmin-goaccess ein.
+
+Das Feld "Update interval (minutes)" akzeptiert 1 bis 10080 Minuten
+(auch 90, 120, 180, 1440 usw.). Cron ruft das Skript jede Minute
+auf; das Skript prueft anhand eines gespeicherten Zeitstempels, ob
+das konfigurierte Intervall abgelaufen ist. Ein Intervallwechsel
+wird beim Speichern wirksam und loest beim naechsten Cron-Tick
+einen neuen Lauf aus. Das bedeutet NICHT, dass bei 120 Minuten
+der HTML-Report jede Minute neu erstellt wird.
+
+Kontrolle:
+  service cron status
+  cat /etc/cron.d/virtualmin-goaccess
+  tail -n 50 /var/log/virtualmin-goaccess.log
+
+Manueller Test:
+  perl /usr/share/webmin/virtualmin-goaccess/update-all.pl --force
+
+Voraussetzung: GoAccess mit --db-path, --persist und --restore.
+
+Version 1.1: Berichte koennen ueber report.cgi?dom=<domain> innerhalb
+von Webmin ohne erneute Apache-Basic-Auth-Anmeldung angezeigt werden.
+Nur fuer den angemeldeten Benutzer zugaengliche, aktivierte Domains
+werden ausgeliefert. Direkte Apache-Report-URLs bleiben geschuetzt.
+
+Version 1.1.3: report.cgi verzichtet auf binmode(STDOUT), da Webmins
+MiniServ-Ausgabehandle keine BINMODE-Methode bereitstellt.

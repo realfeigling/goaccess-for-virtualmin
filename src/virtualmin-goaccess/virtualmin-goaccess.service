@@ -1,0 +1,8 @@
+[Unit]
+Description=Update Virtualmin GoAccess reports
+After=apache2.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/perl /usr/share/webmin/virtualmin-goaccess/update-all.pl
+Nice=10
